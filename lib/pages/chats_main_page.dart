@@ -12,11 +12,11 @@ class ChatMainPage extends StatefulWidget {
 }
 
 class _ChatMainPageState extends State<ChatMainPage> {
-  final List<Map<String, dynamic>> _items = List.generate(10, (index) {
+  final List<Map<String, dynamic>> _items = List.generate(15, (index) {
     return {
       "id": index,
-      "title": "Random User $index",
-      "subtitle": "Random Subtitle $index"
+      "title": "Mark Zuckerberg $index",
+      "subtitle": " Good Morning $index"
     };
   });
 
@@ -95,7 +95,6 @@ class _ChatMainPageState extends State<ChatMainPage> {
             ),
           ],
         ),
-        floatingActionButton: floatingActionButton(),
       ),
     );
   }
@@ -109,58 +108,116 @@ class _ChatMainPageState extends State<ChatMainPage> {
   }
 
   Widget ChatScreen() {
-    return Center(
-      child: ListView(
-        children: ListTile.divideTiles(
-          color: Colors.white,
-          tiles: _items.map(
-            (item) {
-              return ListTile(
-                leading: CircleAvatar(
-                  radius: 25,
-                  backgroundImage: NetworkImage(
-                      'https://cdn.theorg.com/883525c1-a37d-4d07-b9c7-6f330cc05098_medium.png'),
-                  backgroundColor: Colors.transparent,
-                  // child: Text((item['id']).toString()),
-                ),
-                title: Text(
-                  item['title'],
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+    return Scaffold(
+      floatingActionButton: floatingActionButton(),
+      body: Center(
+        child: ListView(
+          children: ListTile.divideTiles(
+            color: Colors.white,
+            tiles: _items.map(
+              (item) {
+                return ListTile(
+                  leading: CircleAvatar(
+                    radius: 25,
+                    backgroundImage: NetworkImage(
+                        'https://cdn.theorg.com/883525c1-a37d-4d07-b9c7-6f330cc05098_medium.png'),
+                    backgroundColor: Colors.transparent,
+                    // child: Text((item['id']).toString()),
                   ),
-                ),
-                subtitle: Row(
-                  children: [
-                    Icon(
-                      Icons.done_all,
-                      size: 20,
-                      color: Colors.blue,
+                  title: Text(
+                    item['title'],
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
                     ),
-                    Text(item['subtitle']),
-                  ],
-                ),
-                trailing: Text('02:23'),
-              );
-            },
-          ),
-        ).toList(),
+                  ),
+                  subtitle: Row(
+                    children: [
+                      Icon(
+                        Icons.done_all,
+                        size: 20,
+                        color: Colors.blue,
+                      ),
+                      Text(item['subtitle']),
+                    ],
+                  ),
+                  trailing: Text('02:23'),
+                );
+              },
+            ),
+          ).toList(),
+        ),
       ),
     );
   }
 
-  Widget CallsScreen() {
-    return Center(
-        child: Text(
-      "3",
-      style: TextStyle(fontSize: 40),
-    ));
-  }
-
-  Widget StatusScreen() {
+  Center StatusScreen() {
     return Center(
         child: Text(
       "2",
       style: TextStyle(fontSize: 40),
     ));
+  }
+
+  Widget CallsScreen() {
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Color.fromARGB(255, 64, 231, 92),
+        child: const Icon(Icons.add_ic_call_rounded),
+      ),
+      body: Center(
+        child: ListView(
+          children: ListTile.divideTiles(
+            color: Colors.white,
+            tiles: _items.map(
+              (item) {
+                return ListTile(
+                  leading: CircleAvatar(
+                    radius: 25,
+                    backgroundImage: NetworkImage(
+                        'https://cdn.theorg.com/883525c1-a37d-4d07-b9c7-6f330cc05098_medium.png'),
+                    backgroundColor: Colors.transparent,
+                    // child: Text((item['id']).toString()),
+                  ),
+                  title: Text(
+                    'Bedirhan Aydin',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  subtitle: Row(
+                    children: [
+                      (item['id'] % 2) == 0
+                          ? Icon(
+                              Icons.call_received,
+                              size: 25,
+                              color: Colors.green,
+                            )
+                          : Icon(
+                              Icons.call_received,
+                              size: 25,
+                              color: Color.fromARGB(255, 255, 0, 0),
+                            ),
+                      Text(' 23 minutes ago'),
+                    ],
+                  ),
+                  trailing: (item['id'] % 2) == 0
+                      ? Icon(
+                          Icons.call,
+                          size: 20,
+                          color: Color.fromARGB(255, 8, 82, 10),
+                        )
+                      : Icon(
+                          Icons.videocam_sharp,
+                          size: 20,
+                          color: Color.fromARGB(255, 8, 82, 10),
+                        ),
+                );
+              },
+            ),
+          ).toList(),
+        ),
+      ),
+    );
   }
 }
