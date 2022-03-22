@@ -60,47 +60,50 @@ class _StatusScreenState extends State<StatusScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const CircleAvatar(
-                      radius: 32.0,
-                      backgroundColor: Color.fromARGB(255, 27, 238, 27),
-                      child: CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 30.0,
-                        backgroundImage: NetworkImage(
-                            'https://cdn.theorg.com/883525c1-a37d-4d07-b9c7-6f330cc05098_medium.png'),
+                Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const CircleAvatar(
+                        radius: 32.0,
+                        backgroundColor: Color.fromARGB(255, 27, 238, 27),
+                        child: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 30.0,
+                          backgroundImage: NetworkImage(
+                              'https://cdn.theorg.com/883525c1-a37d-4d07-b9c7-6f330cc05098_medium.png'),
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          'My status',
-                          style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold,
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            'My status',
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        Text(
-                          'Yesterday, 10:55 am',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
+                          Text(
+                            'Yesterday, 10:55 am',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 120,
-                    ),
-                    IconButton(
-                        onPressed: () {}, icon: const Icon(Icons.more_horiz))
-                  ],
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 120,
+                      ),
+                      IconButton(
+                          onPressed: () {}, icon: const Icon(Icons.more_horiz))
+                    ],
+                  ),
                 ),
                 const SizedBox(
                   height: 10,
