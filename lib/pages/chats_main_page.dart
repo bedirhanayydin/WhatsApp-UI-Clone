@@ -1,18 +1,19 @@
 // ignore_for_file: non_constant_identifier_names, prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-import 'package:flutter_whatsapp_clone/widgets/floating_actionButton_widget.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_whatsapp_clone/pages/calls_Screen.dart';
+import 'package:flutter_whatsapp_clone/pages/chat_Screen.dart';
+import 'package:flutter_whatsapp_clone/pages/status_Screen.dart';
 
 class ChatMainPage extends StatefulWidget {
   const ChatMainPage({Key? key}) : super(key: key);
 
   @override
-  State<ChatMainPage> createState() => _ChatMainPageState();
+  State<ChatMainPage> createState() => ChatMainPageState();
 }
 
-class _ChatMainPageState extends State<ChatMainPage> {
-  final List<Map<String, dynamic>> _items = List.generate(15, (index) {
+class ChatMainPageState extends State<ChatMainPage> {
+  static final List<Map<String, dynamic>> items = List.generate(15, (index) {
     return {
       "id": index,
       "title": "Mark Zuckerberg $index",
@@ -105,119 +106,5 @@ class _ChatMainPageState extends State<ChatMainPage> {
       "OPEN CAMERA\n   NOT ACTİVE",
       style: TextStyle(fontSize: 40),
     ));
-  }
-
-  Widget ChatScreen() {
-    return Scaffold(
-      floatingActionButton: floatingActionButton(),
-      body: Center(
-        child: ListView(
-          children: ListTile.divideTiles(
-            color: Colors.white,
-            tiles: _items.map(
-              (item) {
-                return ListTile(
-                  leading: CircleAvatar(
-                    radius: 25,
-                    backgroundImage: NetworkImage(
-                        'https://cdn.theorg.com/883525c1-a37d-4d07-b9c7-6f330cc05098_medium.png'),
-                    backgroundColor: Colors.transparent,
-                    // child: Text((item['id']).toString()),
-                  ),
-                  title: Text(
-                    item['title'],
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  subtitle: Row(
-                    children: [
-                      Icon(
-                        Icons.done_all,
-                        size: 20,
-                        color: Colors.blue,
-                      ),
-                      Text(item['subtitle']),
-                    ],
-                  ),
-                  trailing: Text('02:23'),
-                );
-              },
-            ),
-          ).toList(),
-        ),
-      ),
-    );
-  }
-
-  Center StatusScreen() {
-    return Center(
-        child: Text(
-      "2",
-      style: TextStyle(fontSize: 40),
-    ));
-  }
-
-  Widget CallsScreen() {
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Color.fromARGB(255, 64, 231, 92),
-        child: const Icon(Icons.add_ic_call_rounded),
-      ),
-      body: Center(
-        child: ListView(
-          children: ListTile.divideTiles(
-            color: Colors.white,
-            tiles: _items.map(
-              (item) {
-                return ListTile(
-                  leading: CircleAvatar(
-                    radius: 25,
-                    backgroundImage: NetworkImage(
-                        'https://cdn.theorg.com/883525c1-a37d-4d07-b9c7-6f330cc05098_medium.png'),
-                    backgroundColor: Colors.transparent,
-                    // child: Text((item['id']).toString()),
-                  ),
-                  title: Text(
-                    'Bedirhan Aydin',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  subtitle: Row(
-                    children: [
-                      (item['id'] % 2) == 0
-                          ? Icon(
-                              Icons.call_received,
-                              size: 25,
-                              color: Colors.green,
-                            )
-                          : Icon(
-                              Icons.call_received,
-                              size: 25,
-                              color: Color.fromARGB(255, 255, 0, 0),
-                            ),
-                      Text(' 23 minutes ago'),
-                    ],
-                  ),
-                  trailing: (item['id'] % 2) == 0
-                      ? Icon(
-                          Icons.call,
-                          size: 20,
-                          color: Color.fromARGB(255, 8, 82, 10),
-                        )
-                      : Icon(
-                          Icons.videocam_sharp,
-                          size: 20,
-                          color: Color.fromARGB(255, 8, 82, 10),
-                        ),
-                );
-              },
-            ),
-          ).toList(),
-        ),
-      ),
-    );
   }
 }
