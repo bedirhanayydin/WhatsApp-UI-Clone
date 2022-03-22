@@ -48,9 +48,9 @@ dev_dependencies:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 flutter_icons:
-  image_path: "assets/icon/WhatsApp_icon.png" 
-  android: "launcher_icon"
+  android: true
   ios: true
+  image_path: "assets/icon/icon.png" 
   # optionally, as transparency is not allowed on app store
   # remove_alpha_ios: true
 # The following section is specific to Flutter.
@@ -63,7 +63,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/icon/WhatsApp_icon.png
+    - assets/icon/icon.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
