@@ -30,15 +30,14 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^2.1.0 
-
+  cupertino_icons: ^1.0.4
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  flutter_launcher_icons: "^0.9.2"
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -48,7 +47,12 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
+flutter_icons:
+  image_path: "assets/icon/WhatsApp_icon.png" 
+  android: "launcher_icon"
+  ios: true
+  # optionally, as transparency is not allowed on app store
+  # remove_alpha_ios: true
 # The following section is specific to Flutter.
 flutter:
 
@@ -58,10 +62,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
-
+  assets:
+    - assets/icon/WhatsApp_icon.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

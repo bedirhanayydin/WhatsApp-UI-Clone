@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp_clone/pages/calls_Screen.dart';
+import 'package:flutter_whatsapp_clone/pages/camera_Screen.dart';
 import 'package:flutter_whatsapp_clone/pages/chat_Screen.dart';
 import 'package:flutter_whatsapp_clone/pages/status_Screen.dart';
 
@@ -98,13 +99,5 @@ class ChatMainPageState extends State<ChatMainPage> {
         ),
       ),
     );
-  }
-
-  Widget CameraScreen() {
-    return Center(
-        child: Text(
-      "OPEN CAMERA\n   NOT ACTİVE",
-      style: TextStyle(fontSize: 40),
-    ));
   }
 }
