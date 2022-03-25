@@ -10,6 +10,8 @@ class StatusScreen extends StatefulWidget {
 }
 
 class _StatusScreenState extends State<StatusScreen> {
+  var size, height_size, width_size;
+
   static final List<Map<String, dynamic>> list_recent_updates =
       List.generate(3, (index) {
     return {
@@ -28,6 +30,9 @@ class _StatusScreenState extends State<StatusScreen> {
   });
   @override
   Widget build(BuildContext context) {
+    size = MediaQuery.of(context).size;
+    height_size = size.height;
+    width_size = size.width;
     return Scaffold(
       resizeToAvoidBottomInset: false, // set it to false
 
@@ -48,7 +53,7 @@ class _StatusScreenState extends State<StatusScreen> {
           ),
           FloatingActionButton(
             onPressed: () {},
-            backgroundColor: const Color.fromARGB(255, 64, 231, 92),
+            backgroundColor: const Color(0xff04ad9c),
             child: const Icon(Icons.camera_alt_rounded),
           ),
         ],
@@ -97,8 +102,8 @@ class _StatusScreenState extends State<StatusScreen> {
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        width: 120,
+                      SizedBox(
+                        width: width_size / 2.6,
                       ),
                       IconButton(
                           onPressed: () {}, icon: const Icon(Icons.more_horiz))

@@ -16,7 +16,7 @@ class _CallsScreenState extends State<CallsScreen> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: const Color.fromARGB(255, 64, 231, 92),
+        backgroundColor: const Color(0xff04ad9c),
         child: const Icon(Icons.add_ic_call_rounded),
       ),
       body: Center(
