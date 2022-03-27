@@ -61,14 +61,14 @@ class _StatusScreenState extends State<StatusScreen> {
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.only(top: 15.0),
+            padding: const EdgeInsets.only(top: 10.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 15),
+                  padding: EdgeInsets.only(left: width_size / 30),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const CircleAvatar(
                         radius: 32.0,
@@ -103,15 +103,16 @@ class _StatusScreenState extends State<StatusScreen> {
                         ],
                       ),
                       SizedBox(
-                        width: width_size / 2.6,
+                        width: width_size * 0.25,
+                        height: height_size * 0.1,
                       ),
                       IconButton(
                           onPressed: () {}, icon: const Icon(Icons.more_horiz))
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
+                SizedBox(
+                  height: height_size * 0.02,
                 ),
                 const Text(
                   '     Recent updates',
@@ -119,8 +120,8 @@ class _StatusScreenState extends State<StatusScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(
-                  height: 2,
+                SizedBox(
+                  height: height_size * 0.01,
                 ),
                 ListView(
                   shrinkWrap: true,
@@ -156,17 +157,14 @@ class _StatusScreenState extends State<StatusScreen> {
                     ),
                   ).toList(),
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
                 const Text(
                   '     Viewed updates',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(
-                  height: 2,
+                SizedBox(
+                  height: height_size * 0.01,
                 ),
                 ListView(
                   shrinkWrap: true,
