@@ -1,6 +1,6 @@
 # flutter_whatsapp_clone
 
-
+Note: I'm doing it by learning :)
 My first amateur clone attempt in Flutter.
 
 ![Screenshot_1647972608](https://user-images.githubusercontent.com/58737803/159548040-f88cd04d-5467-4d6b-b3f1-4a29103cdc10.png)
